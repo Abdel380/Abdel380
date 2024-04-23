@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #111111;
+}
+
+
+header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease, border-bottom 0.5s ease; /* Ajoute une transition de 0.5 seconde */
+}
+
+header.scrolled {
+    background-color: #0f0f0f;
+    border-bottom: 1px solid rgb(29, 29, 29);
+    box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.20);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; 
+}
+
+header .logo {
+    display: block;
+    font-size: 40px;
+    margin-left: 25px;
+    font-weight: 900;
+    font-style: italic;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+header .logo-text {
+    float: left;
+}
+
+header .logo-text-small {
+    float: left;
+    display: none;
+}
+
+header .logo-a {
+    text-decoration: none;
+    color: white;
+}
+
+header .logo-b {
+    text-decoration: none;
+    color: red;
+}
+
+header .mid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 450px;
+    transform: translateX(-15%);
+    color: white;
+}
+
+header .mid a {
+    font-size: 18px;
+    font-weight: 100;
+    transition: text-shadow 0.15s ease;
+}
+header .mid a:hover {
+    cursor: pointer;
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.593);
+}
+
+header .profil {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: aqua;
+    margin-right: 25px;
+}
+.circuit-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.circuit-container img {
+    position: absolute;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.fade {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: linear-gradient(to bottom, #0707077e 0%, rgba(255, 255, 255, 0) 10%, #111111 100%);
+}
+
+.circuit {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    z-index: 100000;
+}
+
+.circuit img {
+    width: 100%;
+    height: 100%;
+    stroke-width: 1px;
+}
+
+.overtake.first {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    max-width: 35px;
+    max-height: 35px;
+    border-radius: 20px;
+    left: 15%; /* Position horizontale en pourcentage de la largeur de l'élément .circuit */
+    top: 58%; /* Position verticale en pourcentage de la hauteur de l'élément .circuit */
+    transform: translate(-50%, -50%); /* Centrer le point */
+    background-color: rgb(255, 0, 0);
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    transition: background-color 0.2s ease;
+}
+.overtake:hover{
+    background-color: rgba(175, 2, 2, 1)
+}
+
+.overtake-desc {
+    position: absolute;
+    width: 200px;
+    height: 90px;
+    background-color: #111111;
+    border-radius: 10px;
+    border: 1px solid rgb(68, 68, 68);
+    display: none; /* Masquer la description par défaut */
+}
+
+/* Afficher la description lors du survol de .overtake.first */
+.overtake.first:hover .overtake-desc {
+    display: block; /* Afficher la description */
+    top: 0; /* Déplacez la description vers le haut par rapport à .overtake.first */
+    left: 0; /* Centrez la description horizontalement */
+    transform: translateX(18px) translateY(18px);
+}
+
+.player  {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.player.n1 {
+    border-bottom: 1px solid rgb(68, 68, 68);
+}
+
+.player-img {
+    width: 35px;
+    height: 35px;
+    border: 1px solid red;
+    margin-left: 10px;
+}
+.player h2{
+    font-size: 18px;
+    font-weight: 100;
+    margin-left: 10px;
+}

@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: #111111;
+}
+.animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: #111111;
+    overflow: hidden; /* Cela cache les parties qui dépassent du cadre */
+    animation-name: getOut;
+    animation-duration: 1s; /* Durée de l'animation */
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards; /* Garde la dernière image de l'animation */
+}
+
+@keyframes getOut {
+    from {
+        transform: translateY(0); /* Commence depuis la position initiale */
+    }
+    to {
+        transform: translateY(-100%); /* Déplacez la partie vers le haut pour la cacher */
+    }
+}
+
+.car-animation {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 120px;
+    animation-name: carAnimation;
+    animation-duration: 4s; /* Durée de l'animation */
+    animation-fill-mode: forwards; /* Garde la dernière image de l'animation */
+}
+
+@keyframes carAnimation {
+    0% {
+        transform: translate(-50%, 100vh) scale(0.5) rotate(180deg); /* Commence depuis la position initiale */
+    }
+    40% {
+        transform: translate(-50%, -50%) scale(0.5) rotate(180deg); /* Déplacez la partie vers le haut pour la cacher */
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(0.5) rotate(180deg); /* Déplacez la partie vers le haut pour la cacher */
+    }
+    100% {
+        transform: translate(-50%, -100vh) scale(0.5) rotate(180deg);
+    }
+}
+
+.traine {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    height: 50%;
+    border: 1px solid white;
+    background: white;
+    transform: translateY(100%);
+    animation-name: traineAnimation;
+    animation-duration: 4s; /* Durée de l'animation */
+    animation-delay: 0.348s;
+    animation-fill-mode: forwards;   
+}
+
+@keyframes traineAnimation {
+    0% {
+        transform: translate(-50%, 100%) ; /* Commence depuis la position initiale */
+    }
+    40% {
+        transform: translate(-50%, 0) ; /* Déplacez la partie vers le haut pour la cacher */
+    }
+    60% {
+        transform: translate(-50%, 0); /* Déplacez la partie vers le haut pour la cacher */
+    }
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease, border-bottom 0.5s ease; /* Ajoute une transition de 0.5 seconde */
+}
+
+header.scrolled {
+    background-color: #0f0f0f;
+    border-bottom: 1px solid rgb(29, 29, 29);
+    box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.20);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; 
+}
+
+header .logo {
+    display: block;
+    font-size: 40px;
+    margin-left: 25px;
+    font-weight: 900;
+    font-style: italic;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+header .logo-text {
+    float: left;
+}
+
+header .logo-text-small {
+    float: left;
+    display: none;
+}
+
+header .logo-a {
+    text-decoration: none;
+    color: white;
+}
+
+header .logo-b {
+    text-decoration: none;
+    color: red;
+}
+
+header .mid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 450px;
+    transform: translateX(-15%);
+    color: white;
+}
+
+header .mid a {
+    font-size: 18px;
+    font-weight: 100;
+    transition: text-shadow 0.15s ease;
+}
+header .mid a:hover {
+    cursor: pointer;
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.593);
+}
+
+header .profil {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: aqua;
+    margin-right: 25px;
+}
+
+.video-container {
+    position: relative; 
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.video-container video {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.fade {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #0707077e 0%, rgba(255, 255, 255, 0) 10%, #111111 100%);
+}
+
+
+.circuit-container {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 1300px;
+}
+.title { 
+    color : white;
+    font-size: 45px;
+    font-weight: 300;
+    font-style: italic;
+    margin-left: 10vw;
+}
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 18rem);
+    justify-content: center;
+    max-width: 100%;
+}
+
+.circuit-card {
+    min-width: 230px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: filter 1s ease; /* Appliquer une transition à la propriété filter */   
+}
+
+.circuit-card:hover .img-circuit {
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.408));
+}
+
+.gridDivider{
+    width: 230px;
+    height: 230px;
+    display: flex;
+    position: absolute;
+    border-right: 1px solid #DEDEDE;
+    margin-right:-1.8rem; /* size of gutter */
+    padding-right: 1.8rem; /* size of gutter */
+    border-left: 1px solid #DEDEDE;
+    margin-left:-1.8rem; /* size of gutter */
+    padding-left: 1.8rem; /* size of gutter */
+}
+
+
+.img-circuit {
+    width: 90%;
+    opacity: 50%;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.circuit-card:hover .img-circuit{
+    cursor: pointer;
+    opacity: 90%;
+    transform: scale(1.02);
+}
+
+.info-circuit {
+    position: absolute;
+    bottom: 0;
+    width: 85%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    margin-top: 10px;
+}
+.info-circuit:hover {
+    cursor: pointer;
+}
+.info-circuit .flag-circuit {
+    width: 55px;
+    height: 35px;
+    opacity: 70%;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.info-circuit h2{
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+    margin-left: 20px;
+    opacity: 60%;
+    transition: opacity 0.3s ease;
+}
+.circuit-card:hover h2{
+    opacity: 100%;
+}
+
+.top-ot{
+    margin-top: 100px;
+}
+
+.top-overtake-container {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1300px;
+}
+
+
+.top-overtake {
+    width: 100%;
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap; /* Utiliser flex-wrap pour contrôler le comportement de passage à la ligne */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.overtake-card {
+    position: relative;
+    width: 360px;
+    height: 210px;
+    border-radius: 8px;
+    margin-top: 35px;
+    border: 1px solid rgb(217, 217, 217);
+    transition: transform 0.3s ease;
+}
+.overtake-card:hover {
+    transform: scale(1.03);
+}
+
+.minia {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(57, 57, 57);
+    border-radius: 8px;
+}
+.top-overtake-desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    border-radius: 0 0 8px 8px;
+    background: linear-gradient(to bottom, #07070700 0%, rgba(255, 255, 255, 0) 10%, #000000 100%);
+    color: white;
+    transition: transform 0.3s ease;
+}
+.overtake-card:hover .top-overtake-desc{
+    background: linear-gradient(to bottom, #07070700 0%, rgba(0, 0, 0, 0.2) 10%, #000000 100%);
+}
+
+.top-overtake-desc h2{
+    margin: 5px 0 0 15px;
+}
+.top-overtake-desc h6{
+    margin: 0 0 0 15px;
+    font-size: 15px;
+    font-weight: 100;
+}
+.ranking {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(25%, 40%);
+    font-size: 150px;
+    color: white;
+}
+
+
+footer {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    color: rgb(122, 122, 122);
+    border-top: 1px solid rgb(74, 74, 74);
+}
+footer h2 {
+    font-weight: 100;
+}
+footer h3 {
+    font-weight: 100;
+}
+
+
+/* AJOUT OBLIGATOIRE */
+@media screen and (max-width: 1000px) {
+    header .mid {
+        display: none;
+    }
+ 
+    
+}
+
+@media screen and (max-width: 600px) {
+    header .logo-text {
+        display: none;
+    }
+    header .logo-text-small {
+        display: block;*
+    }
+
+    .top-overtake-container {
+        width: 80%;
+    }
+
+    .overtake-card {
+        width: 80vw;
+        height: auto;
+    }
+
+    .ranking { 
+        font-size: 80px;
+
+    }
+}
