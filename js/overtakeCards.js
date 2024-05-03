@@ -1,5 +1,7 @@
 var csvfile = new XMLHttpRequest();
 
+var currentFileName = window.location.pathname.split('/').pop();
+
 // Set up an event listener for changes in the csvfile object
 csvfile.onreadystatechange = function() {
 
@@ -27,7 +29,7 @@ csvfile.onreadystatechange = function() {
             
             // Iterate over each overtake data and update the Html page if the location is 'Bahrain'
             overtakesArray.forEach(function(overtake) {
-                if (overtake[0]==='Bahrain'){
+                if (overtake[0].toLowerCase() === currentFileName.replace('.html', '')){
                     // Check if the overtake-location div already has a hoverCard div, if not, add one
                     if (!overtakeLocations[parseInt(overtake[1])-1].querySelector('.overtake-hoverCard')) {
                         overtakeLocations[parseInt(overtake[1])-1].innerHTML = `<div class="overtake-hoverCard"></div>`
@@ -46,7 +48,7 @@ csvfile.onreadystatechange = function() {
                     </div>`;
                 }
             });
-            
+
             // Check if any hover card needs to be widened based on the number of drivers
             document.querySelectorAll('.overtake-hoverCard').forEach((hoverCard) => {
                 hoverCard.querySelectorAll('.overtake-drivers').forEach((driverContainer) => {
@@ -55,13 +57,23 @@ csvfile.onreadystatechange = function() {
                     }
                 });
             });
-
-            // Hide the overtake locations that have no overtake data
+            
+            
+            
             document.querySelectorAll('.overtake-location').forEach((location) => {
-                if (!location.querySelector('.overtake-hoverCard')){
+                
+                const hoverCard = location.querySelector('.overtake-hoverCard');
+                // Hide the overtake locations that have no overtake data
+                if (!hoverCard){
                     location.classList.add('empty');
+                // Add overtake count to each other overtake location
+                } else {
+                    const rowDivs = hoverCard.querySelectorAll('.overtake-row');
+                    const rowCount = rowDivs.length;
+                    location.insertAdjacentHTML('afterbegin', `${rowCount}`);
                 }
             });
+
         } else {
             // Error handling in case the file loading was not successful
             console.error('Error loading file: ' + csvfile.status);

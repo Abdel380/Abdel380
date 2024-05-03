@@ -1,93 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
-*, body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
-    background-color: #111111;
-}
-
-header {
-    position: fixed;
-    width: 100%;
-    display: flex;
-    height: 80px;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    transition: background-color 0.5s ease, box-shadow 0.5s ease, border-bottom 0.5s ease; /* Ajoute une transition de 0.5 seconde */
-}
-
-header.scrolled {
-    background-color: #0f0f0f;
-    border-bottom: 1px solid rgb(29, 29, 29);
-    box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.20);
-    transition: background-color 0.5s ease, box-shadow 0.5s ease; 
-}
-
-header .logo {
-    display: block;
-    font-size: 40px;
-    margin-left: 25px;
-    font-weight: 900;
-    font-style: italic;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-}
-
-header .logo-text {
-    float: left;
-}
-
-header .logo-text-small {
-    float: left;
-    display: none;
-}
-
-header .logo-a {
-    text-decoration: none;
-    color: white;
-}
-
-header .logo-b {
-    text-decoration: none;
-    color: red;
-}
-
-header .mid {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 450px;
-    transform: translateX(-15%);
-    color: white;
-}
-
-header .mid a {
-    font-size: 18px;
-    font-weight: 100;
-    transition: text-shadow 0.15s ease;
-}
-header .mid a:hover {
-    cursor: pointer;
-    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.593);
-}
-
-header .profil {
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    background-color: aqua;
-    margin-right: 25px;
-}
 
 .circuit-container {
     position: relative;
@@ -120,7 +31,7 @@ header .profil {
     transform: translateX(-50%);
     width: 52vw;
     height: 39vw;
-    z-index: 100000;
+    z-index: 1000;
 }
 
 .img-circuit {
@@ -224,7 +135,8 @@ header .profil {
     position: absolute;
     display: none; /* Masquer la description par défaut */
     width: 250px;
-    background-color: #111111;
+    background-color: rgba(17, 17, 17, 0.90);
+
     border-radius: 10px;
     border: 1px solid rgb(68, 68, 68);
     top: 0; 
@@ -331,33 +243,37 @@ header .profil {
         font-size: 2vw;
     }
 
-    .overtake-hoverCard{
+    .overtake-hoverCard {
         width: 200px;
+    }
+    .overtake-hoverCard.wide {
+        width: 250px;
     }
 
     .overtake-row {
         height: 52px;
     }
 
-    .driverA{
+    .driverA {
         width: 50px;
         height: 50px;
     }
 
-    .driverB{
+    .driverB {
         width: 35px;
         height: 35px;
     }
 
-    .overtake-row .overtake-lap{
+    .overtake-row .overtake-lap {
         font-size: 11px;
         left: 50px;
     }
 
 
-    .overtake-row .overtake-year{
+    .overtake-row .overtake-year {
         font-size: 16px;
-        top: 15px;}
+        top: 15px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -368,7 +284,7 @@ header .profil {
         display: block;
     }
 
-    .circuit{
+    .circuit {
         width: 88vw;
         height: 66vw;   
     }
