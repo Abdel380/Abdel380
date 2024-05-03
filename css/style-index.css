@@ -20,13 +20,13 @@
     background: linear-gradient(to bottom, #0707077e 0%, rgba(255, 255, 255, 0) 10%, #111111 100%);
 }
 
-
 .circuit-container {
     margin-left: 50%;
     transform: translateX(-50%);
     width: 80%;
     max-width: 1300px;
 }
+
 .title { 
     color : white;
     font-size: 45px;

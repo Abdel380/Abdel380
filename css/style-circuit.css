@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+
 .circuit-container {
     position: relative;
     width: 100%;
@@ -213,13 +214,11 @@
 
 /* AJOUT OBLIGATOIRE */
 @media screen and (max-width: 1000px) {
-    header .mid {
-        display: none;
-    }
     .circuit{
         width: 68vw;
         height: 51vw;   
     }
+
     .overtake-location {
         width: 3vw;
         height: 3vw;
@@ -269,7 +268,6 @@
         left: 50px;
     }
 
-
     .overtake-row .overtake-year {
         font-size: 16px;
         top: 15px;
@@ -277,16 +275,8 @@
 }
 
 @media screen and (max-width: 600px) {
-    header .logo-text {
-        display: none;
-    }
-    header .logo-text-small {
-        display: block;
-    }
-
     .circuit {
         width: 88vw;
         height: 66vw;   
     }
-
 }
