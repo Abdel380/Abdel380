@@ -1,6 +1,82 @@
-var csvfile = new XMLHttpRequest();
+const tracksInfos = {
+    bahrain: {
+        turnsCount: 15, 
+        locations: [
+            ['5%', '81%'],
+            ['8%', '73%'],
+            ['7%', '63%'],
+            ['13.5%', '6%'],
+            ['28%', '21%'],
+            ['33.5%', '27.5%'],
+            ['35%', '38%'],
+            ['47%', '55%'],
+            ['22%', '54%'],
+            ['17%', '61%'],
+            ['70%', '54%'],
+            ['54%', '35%'],
+            ['61%', '12%'],
+            ['92.5%', '78%'],
+            ['87%', '82%']
+        ]
+    },
+    monaco: {
+        turnsCount: 19, 
+        locations: [
+            ['47.6%', '9.4%'],
+            ['60.1%', '56.1%'],
+            ['65.6%', '73%'],
+            ['77%', '65.4%'],
+            ['94.6%', '79.8%'],
+            ['86.9%', '90.4%'],
+            ['92.4%', '85.1%'],
+            ['95.6%', '95.4%'],
+            ['69.1%', '91.7%'],
+            ['53.7%', '51.1%'],
+            ['51.3%', '48.5%'],
+            ['46.5%', '17.4%'],
+            ['32.6%', '16.2%'],
+            ['30.9%', '19.8%'],
+            ['20.5%', '25.1%'],
+            ['18.7%', '22.2%'],
+            ['11.5%', '28%'],
+            ['6.5%', '38.9%'],
+            ['4.2%', '28.2%']
+        ]
+    }
+};
 
-var currentFileName = window.location.pathname.split('/').pop();
+// ############################ Setup Page ############################
+
+// Retrieve parameter "trackName" from url
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const trackName = urlParams.get('trackName');
+
+// Get html tags
+const circuitContainer = document.querySelector('.circuit-container');
+const circuit = document.querySelector('.circuit');
+
+// Set page title
+document.title = trackName.toUpperCase();
+
+// Set title next to the track to the right name
+circuitContainer.querySelector('.title').innerHTML = trackName.toUpperCase();
+
+// Set sources of the background & the track images.
+circuitContainer.querySelector('.img-background').src="../media/Image/Backgrounds/" + trackName + "-background.png";
+circuitContainer.querySelector('.img-circuit').src="../media/Image/Tracks/PNGs/" + trackName + "-track.png";
+
+// Create & set positions for each turn of the associated track
+tracksInfos[trackName].locations.forEach((point, pointIndex) => {
+    circuit.innerHTML += `<div class="overtake-location"></div><!-- T${pointIndex+1} -->`;
+    let overtakeLocations = circuitContainer.querySelectorAll('.overtake-location');
+    overtakeLocations[pointIndex].style.left = point[0];
+    overtakeLocations[pointIndex].style.top = point[1];
+});
+
+
+// ############################ Read CSV ############################
+var csvfile = new XMLHttpRequest();
 
 // Set up an event listener for changes in the csvfile object
 csvfile.onreadystatechange = function() {
@@ -29,7 +105,7 @@ csvfile.onreadystatechange = function() {
             
             // Iterate over each overtake data and update the Html page if the location is 'Bahrain'
             overtakesArray.forEach(function(overtake) {
-                if (overtake[0].toLowerCase() === currentFileName.replace('.html', '')){
+                if (overtake[0].toLowerCase() === trackName){
                     // Check if the overtake-location div already has a hoverCard div, if not, add one
                     if (!overtakeLocations[parseInt(overtake[1])-1].querySelector('.overtake-hoverCard')) {
                         overtakeLocations[parseInt(overtake[1])-1].innerHTML = `<div class="overtake-hoverCard"></div>`
@@ -57,8 +133,6 @@ csvfile.onreadystatechange = function() {
                     }
                 });
             });
-            
-            
             
             document.querySelectorAll('.overtake-location').forEach((location) => {
                 
