@@ -6,7 +6,3 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scrolled'); // Supprime la classe "scrolled" du header
     }
 });
-
-
-
-

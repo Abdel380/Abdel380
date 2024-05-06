@@ -71,16 +71,51 @@
     padding-left: 1.8rem; /* size of gutter */
 }
 
-
 .img-circuit {
     width: 90%;
     opacity: 50%;
     transition: opacity 0.3s ease, transform 0.3s ease;
+
 }
+
+#bahrainTrack{
+    transform: scale(0.9);
+}
+
+#hungaryTrack{
+    transform: scale(0.6);
+    rotate: 90deg;
+}
+
+#canadaTrack{
+    transform: scale(0.95);
+    rotate: 180deg;
+}
+
+#japanTrack{
+    transform: scale(1.05);
+}
+
 .circuit-card:hover .img-circuit{
     cursor: pointer;
     opacity: 90%;
     transform: scale(1.02);
+}
+
+.circuit-card:hover #bahrainTrack{
+    transform: scale(0.92);
+}
+
+.circuit-card:hover #hungaryTrack{
+    transform: scale(0.62);
+}
+
+.circuit-card:hover #canadaTrack{
+    transform: scale(0.97);
+}
+
+.circuit-card:hover #japanTrack{
+    transform: scale(1.07);
 }
 
 .info-circuit {

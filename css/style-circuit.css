@@ -2,19 +2,29 @@
 
 
 
+#testvroum{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: #111111;
+    z-index: 1;
+}
+
 .circuit-container {
     position: relative;
     width: 100%;
-    height: 100vh;
     overflow: hidden;
 }
 
 .img-background {
-    position: absolute;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 100vw;
+    max-width: 125vw;
     z-index: 1;
+
 }
 
 .fade {
@@ -22,37 +32,33 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     z-index: 2;
-
     background: linear-gradient(to bottom, #0707077e 0%, rgba(17, 17, 17, 50%) 50%, #111111 100%);
 }
 
 .title {
-    position: relative;
+    position: absolute;
     color : white;
     font-size: 45px;
     font-weight: 300;
     font-style: italic;
     margin-left: 10vw;
     z-index: 3;
-    margin-top: 20vh;
+    margin-top: 17vh;
 }
 
 .circuit {
     position: absolute;
     display: flex;
     left: 50%;
-    top: 150px;
+    top: calc(45px + (20vh));
     transform: translateX(-50%);
-    width: 52vw;
-    z-index: 1000;
+    width: 58vw;
+    z-index: 900;
 }
 
 .img-circuit {
     width: 100%;
-    height: 100%;
-    stroke-width: 1px;
 }
 
 .overtake-location {
@@ -112,6 +118,7 @@
     overflow: hidden;
     color: #ABABAB;
     height: 74px;
+    cursor: pointer;
 }
 
 .overtake-drivers{
@@ -165,13 +172,14 @@
 }
 
 
+@media screen and (max-width: 1250px) {
+    .circuit{
+        width: 68vw; 
+    }
+}
+
 /* AJOUT OBLIGATOIRE */
 @media screen and (max-width: 1000px) {
-    .circuit{
-        width: 68vw;
-        height: 51vw;   
-    }
-
     .overtake-location {
         width: 3vw;
         height: 3vw;
@@ -183,10 +191,14 @@
 }
 
 @media screen and (max-width: 800px) {
-    .circuit{
-        width: 76vw;
-        height: 57svw;   
+    .title{
+        font-size: 35px;
     }
+
+    .circuit{
+        width: 76vw; 
+    }
+
     .overtake-location {
         width: 3vw;
         height: 3vw;
@@ -233,8 +245,11 @@
 }
 
 @media screen and (max-width: 600px) {
+    .title{
+        font-size: 25px;
+    }
+
     .circuit {
         width: 88vw;
-        height: 66vw;   
     }
 }

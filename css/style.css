@@ -39,56 +39,41 @@ body {
 
 .car-animation {
     position: absolute;
-    top:50%;
+    top: 0;
     left: 50%;
-    width: 120px;
+    width: 60px;
     animation-name: carAnimation;
-    animation-duration: 4s; /* Durée de l'animation */
+    animation-duration: 1.8s; /* Durée de l'animation */
     animation-fill-mode: forwards; /* Garde la dernière image de l'animation */
 }
 
 @keyframes carAnimation {
-    0% {
-        transform: translate(-50%, 100vh) scale(0.5) rotate(180deg); /* Commence depuis la position initiale */
+    from {
+        transform: translate(-50%, 100vh) rotate(180deg); /* Commence depuis la position initiale */
     }
-    40% {
-        transform: translate(-50%, -50%) scale(0.5) rotate(180deg); /* Déplacez la partie vers le haut pour la cacher */
-    }
-    60% {
-        transform: translate(-50%, -50%) scale(0.5) rotate(180deg); /* Déplacez la partie vers le haut pour la cacher */
-    }
-    100% {
-        transform: translate(-50%, -100vh) scale(0.5) rotate(180deg);
+    to {
+        transform: translate(-50%, 50vh) rotate(180deg);
     }
 }
 
 .traine {
     position: absolute;
-    bottom: 0;
+    top: 100%;
     left: 50%;
-    width: 3px;
-    height: 50%;
-    border: 1px solid white;
+    width: 5px;
+    height: calc(50vh - 94px);
     background: white;
-    transform: translateY(100%);
     animation-name: traineAnimation;
-    animation-duration: 4s; /* Durée de l'animation */
-    animation-delay: 0.348s;
-    animation-fill-mode: forwards;   
+    animation-duration: 1.8s; /* Durée de l'animation */
+    animation-fill-mode: forwards;
 }
 
 @keyframes traineAnimation {
-    0% {
-        transform: translate(-50%, 100%) ; /* Commence depuis la position initiale */
+    from {
+        transform: translate(-50%, calc(0vh + 94px)) ; /* Commence depuis la position initiale */
     }
-    40% {
-        transform: translate(-50%, 0) ; /* Déplacez la partie vers le haut pour la cacher */
-    }
-    60% {
-        transform: translate(-50%, 0); /* Déplacez la partie vers le haut pour la cacher */
-    }
-    100% {
-        transform: translate(-50%, 0);
+    to {
+        transform: translate(-50%, calc(-50vh + 94px));
     }
 }
 
