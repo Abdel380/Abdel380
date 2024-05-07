@@ -88,51 +88,60 @@ function transitionColor(light, targetColor) {
 let currentCar = null;
 
 // Fonction pour charger le modèle
+// Fonction pour charger le modèle
 function loadModel(ecurie) {
   (transitionColor(spotLight, 0x000000),
   transitionColor(spotLight2, 0x000000))
     .then(() => {
       const path = `${ecurie}/`;
       const loader = new GLTFLoader().setPath(path);
-      loader.load('scene.gltf', (gltf) => {
-        console.log('loading model');
-
-        // Vérifie s'il y a une voiture actuellement chargée
-        if (currentCar !== null) {
-          // Retire la voiture actuellement chargée de la scène
-          scene.remove(currentCar);
-          currentCar = null;
-        }
-
-        const mesh = gltf.scene;
-
-        mesh.traverse((child) => {
-          if (child.isMesh) {
-            child.castShadow = true;
-            child.receiveShadow = true;
+      
+      // Ajout de l'événement onProgress pour suivre le chargement du modèle
+      loader.load('scene.gltf', 
+        (gltf) => {
+          console.log('loading model');
+          // Vérifie s'il y a une voiture actuellement chargée
+          if (currentCar !== null) {
+            // Retire la voiture actuellement chargée de la scène
+            scene.remove(currentCar);
+            currentCar = null;
           }
-        });
+          const mesh = gltf.scene;
 
-        mesh.position.set(0, 0, 0);
-        scene.add(mesh);
-
-        // Attribue la nouvelle voiture à la variable currentCar
-        currentCar = mesh;
-        document.querySelector('h1').innerText = ecurie.charAt(0).toUpperCase() + ecurie.slice(1);
-
-        // Transition des lumières en fonction de l'état actuel (allumé/éteint)
-        transitionColor(spotLight, 0xffffff)
-          .then(() => transitionColor(spotLight2, 0xffffff))
-          .then(() => {
-            document.getElementById('progress-container').style.display = 'none';
+          mesh.traverse((child) => {
+            if (child.isMesh) {
+              child.castShadow = true;
+              child.receiveShadow = true;
+            }
           });
-      }, (xhr) => {
-        console.log(`loading ${xhr.loaded / xhr.total * 100}%`);
-      }, (error) => {
-        console.error(error);
-      });
+
+          mesh.position.set(0, 0, 0);
+          scene.add(mesh);
+
+          // Attribue la nouvelle voiture à la variable currentCar
+          currentCar = mesh;
+          document.querySelector('h1').innerText = ecurie.charAt(0).toUpperCase() + ecurie.slice(1);
+          
+          // Transition des lumières en fonction de l'état actuel (allumé/éteint)
+          transitionColor(spotLight, 0xffffff)
+            .then(() => transitionColor(spotLight2, 0xffffff))
+            .then(() => {
+              document.getElementById('progress-container').style.display = 'none';
+            });
+        }, 
+        // Gestion de l'événement onProgress
+        (xhr) => {
+          // Calcul du pourcentage de chargement
+          const percentLoaded = (xhr.loaded / xhr.total * 100).toFixed(2);
+          // Affichage du pourcentage dans le conteneur de progression
+          document.getElementById('progress-text').textContent = `${percentLoaded}%`;
+        },
+        (error) => {
+          console.error(error);
+        });
     });
 }
+
 
 loadModel("ferrari");
 const ecurieButtons = document.querySelectorAll('.ecurieButton');
