@@ -2,205 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Over Takes</title>
-    <link rel="stylesheet" href="style.css">
+    <title>F1 3D</title>
+    <link rel="stylesheet" href="public/index.css">
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@v0.163.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@v0.163.0/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="animation">
-    <img src="media/Icon/car2.png" alt="car" class="car-animation">
+    <img src="public/media/icon/car2.png" alt="car" class="car-animation">
     <div class="traine"></div>
 </div>
-
-<header id="Header" class="Header">
-    <div class="logo">
-        <span><a href="#" class="logo-text logo-a poppins-black-italic">OVER&nbsp;</a></span><span><a href="#" class="logo-text logo-b poppins-black-italic">TAKES</a></span>
-        <span><a href="#" class="logo-text-small logo-a poppins-black-italic">O</a></span><span><a href="#" class="logo-text-small logo-b poppins-black-italic">T</a></span>
-    </div>
-    <div class="mid">
-        <a>Accueil</a>
-        <a>Circuits</a>
-        <a>Actualité</a>
-        <a>Contact</a>
-    </div>
-
-    <div class="profil">
-    </div>
-</header>
-
-<div class="video-container">
-    <div class="fade"></div>
-    <video src="media/video/Skyfall  F1 Edit.mp4" autoplay muted loop></video>
+<div id="heading">
+    <h1></h1>
+    <div class="border"></div>
 </div>
-
-<h2 class="title">CIRCUITS</h2>
-<div class="circuit-container">
-    <div class="grid-container">
-        
-        <div class="circuit-card">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/AustraliaTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/australiaFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Australie</h2>
-            </div>
-        </div>
-        <div class="circuit-card">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/AustriaTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/saudiArabiaFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Autriche</h2>
-            </div>
-        </div>
-        <div class="circuit-card">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/BahreinTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/bahreinFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Bahrain</h2>
-            </div>
-        </div>
-        <div class="circuit-card">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/BakuCityTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/azerbaijanFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Azerbaïdjan</h2>
-            </div>
-        </div>
-        <div class="circuit-card last">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/BarcelonaCatalunyaTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/spainFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Espagne</h2>
-            </div>
-        </div>
-        <div class="circuit-card">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/CanadaTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/canadaFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Canada</h2>
-            </div>
-        </div>
-        <div class="circuit-card">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/HungaryTrack.svg" alt="Img-circuit" class="img-circuit" style="transform: scale(0.6);">
-            <div class="info-circuit">
-                <img src="media/flag/hungaryFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Hongrie</h2>
-            </div>
-        </div>
-        <div class="circuit-card">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/ImolaTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/italyFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Emilie-Romagne</h2>
-            </div>
-        </div>
-        <div class="circuit-card">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/MiamiTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/floridaFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Miami</h2>
-            </div>
-        </div>
-        <div class="circuit-card last">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/MonacoTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/monacoFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Monaco</h2>
-            </div>
-        </div>
-        <div class="circuit-card">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/MonzaTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/italyFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Italie</h2>
-            </div>
-        </div>
-        <div class="circuit-card">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/SaudiArabiaTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/saudiArabiaFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Arabie Saoudite</h2>
-            </div>
-        </div>
-        <div class="circuit-card">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/SilverstoneTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/unitedKingdomFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Grande-Bretagne</h2>
-            </div>
-        </div>
-        <div class="circuit-card">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/SpaFrancorchampTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/belgiumFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Belgique</h2>
-            </div>
-        </div>
-        <div class="circuit-card last">
-            <div class="gridDivider"></div>
-            <img src="media/tracks/ZandvoortTrack.svg" alt="Img-circuit" class="img-circuit">
-            <div class="info-circuit">
-                <img src="media/flag/netherlandsFlag.png" class="flag-circuit" alt="Flag Circuit">
-                <h2>Pays-Bas</h2>
-            </div>
-        </div>
-    </div>
+<div id="progress-container">
+    <div id="progress"></div>
 </div>
-
-<h2 class="title top-ot">CLASSEMENT</h2>
-<div class="top-overtake-container">
-    <div class="top-overtake">
-        <a href="#">
-            <div class="overtake-card top1">
-                <img src="media/Image/c.webp" alt="OCON vs ALONSO video miniature" class="minia">
-                <div class="top-overtake-desc">
-                    <h2>OCON vs ALONSO</h2>
-                    <h6>Indonésie - 2023</h6>
-                </div>
-                <h3 class="ranking">1</h3>
-            </div>
-        </a>
-        <a href="#">
-            <div class="overtake-card top2">
-                <img src="media/Image/leclerc-vs-perez.avif" alt="LECLERC vs PEREZ video miniature" class="minia">
-                <div class="top-overtake-desc">
-                    <h2>LECLERC vs PEREZ</h2>
-                    <h6>Vegas - 2023</h6>
-                </div>
-                <h3 class="ranking">2</h3>
-            </div>
-        </a>
-        <a href="#">    
-            <div class="overtake-card top3">
-                <img src="media/Image/hamilton-vs-alonso.jpeg" alt="HAMILTON vs ALONSO video miniature" class="minia">
-                <div class="top-overtake-desc">
-                    <h2>HAMILTON vs ALONSO</h2>
-                    <h6>Japon - 2023</h6>
-                </div>
-                <h3 class="ranking">3</h3>
-            </div>
-        </a>
+<!-- Ajout du bouton de sélection d'écurie -->
+<div class="classement">
+    <div class="classement-head">
+        <img src="public/media/f1-logo.png" alt="f1-logo">
     </div>
+    <button class="team ecurieButton" data-ecurie="redbull">
+        <div class="img-container">
+            <img src="public/media/rb-logo.png" alt="logo">
+        </div>
+        <h3>RedBull</h3>
+        <h4>67</h4>
+    </button>
+    <button class="team ecurieButton" data-ecurie="mclaren">
+        <div class="img-container">
+            <img src="public/media/mclaren-logo.png" alt="logo">
+        </div>
+        <h3>McLaren</h3>
+        <h4>25</h4>
+    </button>
+    <button class="team ecurieButton" data-ecurie="mercedes">
+        <div class="img-container">
+            <img src="public/media/mercedes-logo.png" alt="logo">
+        </div>
+        <h3>Mercedes</h3>
+        <h4>49</h4>
+    </button>
+    <button class="team ecurieButton" data-ecurie="ferrari">
+        <div class="img-container">
+            <img src="public/media/ferrari-logo.png" alt="logo">
+        </div>
+        <h3>Ferrari</h3>
+        <h4>25</h4>
+    </button>
+    <button class="team ecurieButton" data-ecurie="aston martin">
+        <div class="img-container">
+            <img src="public/media/aston-logo.png" alt="logo">
+        </div>
+        <h3>Aston</h3>
+        <h4>0</h4>
+    </button>
+    <button class="team ecurieButton" data-ecurie="alphatauri">
+        <div class="img-container">
+            <img src="public/media/alphatauri-logo.png" alt="logo">
+        </div>
+        <h3>Alpha Tauri</h3>
+        <h4>0</h4>
+    </button>
+    <button class="team ecurieButton" data-ecurie="alpine">
+        <div class="img-container">
+            <img src="public/media/alpine-logo.png" alt="logo">
+        </div>
+        <h3>Alpine</h3>
+        <h4>0</h4>
+    </button>
+    
 </div>
-
-
-<footer>
-    <h2>Mentions legales</h2>
-    <h3>Par H'LALI Abdellah & PREVOT Romain</h3>
-</footer>
-<script src="script.js"></script>
+<div class="menu">
+    <div class="languette">
+        <img src="public/media/icon/fleche.png" alt="fleche">
+    </div>
+    <div class="menu-head">
+        <h2>OverTakes</h2>
+    </div>
+    <p>statistique</p>
+</div>
+<script type="module" src="./main.js"></script>
 </body>
 </html>

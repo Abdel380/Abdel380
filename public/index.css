@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+}
+
+.animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: #020202;
+    overflow: hidden; /* Cela cache les parties qui dépassent du cadre */
+    animation-name: getOut;
+    animation-duration: 4s; /* Durée de l'animation */
+    animation-delay: 2s;
+    animation-fill-mode: forwards; /* Garde la dernière image de l'animation */
+}
+
+@keyframes getOut {
+    from {
+        transform: translateY(0); /* Commence depuis la position initiale */
+    }
+    to {
+        transform: translateY(-100%); /* Déplacez la partie vers le haut pour la cacher */
+    }
+}
+
+.car-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    animation-name: carAnimation;
+    animation-duration: 5s; /* Durée de l'animation */
+    animation-fill-mode: forwards; /* Garde la dernière image de l'animation */
+}
+
+@keyframes carAnimation {
+    0% {
+        transform: translate(-50%, 100vh) scale(0.5) rotate(180deg); /* Commence depuis la position initiale */
+    }
+    40% {
+        transform: translate(-50%, -50%) scale(0.5) rotate(180deg); /* Déplacez la partie vers le haut pour la cacher */
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(0.5) rotate(180deg); /* Déplacez la partie vers le haut pour la cacher */
+    }
+    100% {
+        transform: translate(-50%, -100vh) scale(0.5) rotate(180deg);
+    }
+}
+
+.traine {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    height: 50%;
+    border: 1px solid white;
+    background: white;
+    transform: translateY(100%);
+    animation-name: traineAnimation;
+    animation-duration: 4s; /* Durée de l'animation */
+    animation-delay: 0.55s;
+    animation-fill-mode: forwards;   
+}
+
+@keyframes traineAnimation {
+    0% {
+        transform: translate(-50%, 100%) ; /* Commence depuis la position initiale */
+    }
+    40% {
+        transform: translate(-50%, 0) ; /* Déplacez la partie vers le haut pour la cacher */
+    }
+    60% {
+        transform: translate(-50%, 0); /* Déplacez la partie vers le haut pour la cacher */
+    }
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+#heading {
+    position: fixed;
+    width: 100%;
+    padding: 32px;
+}
+
+.border {
+    background: linear-gradient(90deg, gray, 70%, rgba(0, 0, 0, 0));
+    height: 2px;
+    width: 80vw;
+    margin-top: 4px;
+}
+
+h1 {
+    color: rgb(215, 215, 215);
+    font-size: 50px;
+    margin: 0px;
+    font-weight: 100;
+}
+
+#progress-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#progress {
+font-size: 3em;
+color: white;
+}
+
+.lightButton {
+    position: absolute;
+    left: 50%;
+    z-index: 10000;
+}
+
+.menu {
+    width: 400px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    background-color: #111111;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.6s ease;
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.187);
+}
+
+.languette {
+    width: 100px;
+    height: 35px;
+    background-color: #111111;
+    transform: translateX(-66px) rotate(90deg);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+
+.languette img {
+    transform: rotate(-90deg);
+    max-height: 80% ;
+    transition: transform 0.6s ease;
+}
+.menu:hover .languette img {
+    transform: rotate(90deg);
+}
+
+.menu.display {
+    transform: translateY(0);
+}
+.menu:hover {
+    transform: translateY(0);
+}
+.menu-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid rgb(40, 40, 40);
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.187);
+}
+.menu-head h2 {
+    font-weight: 800;
+    font-size: 50px;
+    color: white;
+    font-style: italic;
+}
+
+.classement {
+    width: 250px;
+    height: 800px;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid rgb(65, 65, 65);
+    border-radius: 15px;
+    background-color: rgba(11, 11, 11, 0.849);
+    opacity: 0.8;
+    transition: opacity 0.15s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 20px 5px rgba(0, 0, 0, 0.25);
+}
+
+.classement:hover {
+    opacity: 1;
+}
+
+
+.classement-head {
+    width: 100%;
+    height: 120px;
+    border-bottom: 1px solid rgb(78, 78, 78);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.classement-head img{
+    max-width: 60%;
+}
+
+.classement .team {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(48, 48, 48, 0.584);
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0s ease-out;
+}
+.classement .team:hover {
+    background: rgba(0, 0, 0, 1);
+}
+.img-container {
+    width: 45px;
+    height: 80%;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.classement .team img {
+    max-width: 100%;
+    max-height: 80%;
+}
+.classement .team h3 {
+    margin-left: 15px;
+    color: white;
+    font-weight: 400;
+    font-size: 17px;
+    opacity: 0.7;
+    transition: opacity 0.1s ease;
+}
+.classement .team h4 {
+    position: absolute;
+    right: 15px;
+    color: white;
+    font-weight: 400;
+    font-size: 17px;
+    opacity: 0.7;
+    transition: opacity 0.1s ease;
+}
+
+.classement .team:hover h3, .classement .team:hover h4 {
+    opacity: 1;
+}
