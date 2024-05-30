@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../media/Icon/favicon.png">
-    <title>OverTakes track</title>
+    <title>OverTakes Login</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style-circuit.css">
-    
+    <link rel="stylesheet" href="../css/style-auth.css">
+    <script src="../js/script.js"></script>
 </head>
-<body style="background-color: #111111;">
-    <div class="animation">
-        <img src="../media/Icon/car2.png" alt="car" class="car-animation">
-        <div class="traine"></div>
-    </div>
+<body style="background-image: url('../media/Image/Backgrounds/Auth_Background.png'); background-repeat: repeat;">
 
-    <header id="HeaderBar" class="HeaderBar">
+    <header id="HeaderBar" class="HeaderBar" style="background-color: #0f0f0f;
+    border-bottom: 1px solid rgb(29, 29, 29);
+    box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.20);">
         <div class="HeaderBar-module_Logo">
             <span><a href="index.html" class="logo-text logo-a poppins-black-italic" style="text-decoration: none;">OVER&nbsp;</a></span><span><a href="index.html" class="logo-text logo-b poppins-black-italic" style="text-decoration: none;">TAKES</a></span>
             <span><a href="index.html" class="logo-text-small logo-a poppins-black-italic" style="text-decoration: none;">O</a></span><span><a href="index.html" class="logo-text-small logo-b poppins-black-italic" style="text-decoration: none;">T</a></span>
@@ -32,24 +30,34 @@
         </div>
     </header>
 
-    <div class="circuit-container">
-        <h2 class="title"></h2>
-        <div class="fade"></div>
-        <img src="" alt="circuit" class="img-background">
-        <div class="circuit">
-            <img src="" alt="circuit" class="img-circuit">
+    <div class="login-body">
+        <div class="login-wrap">
+            <div class="login-header">
+                <h1>Se Connecter</h1>
+            </div>
+            <div class="login-area">
+                <div class="login-form" style="color: white;">
+                    <form class="login-form" action="/login" method="post" accept-charset="UTF-8">
+                        <div class="login-auth">
+                            <div id="login-email" class="field">
+                                <label for="emailInput">Nom d'utilisateur ou email</label>
+                                <input id="emailInput" type="text">
+                            </div>
+                            <div id="login-password" class="field">
+                                <label for="passwordInput">Mot de passe</label>
+                                <input id="passwordInput" type="password">
+                            </div>
+                        </div>
+                        <button type="submit">Se Connecter</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-    <div id="testvroum"></div>
-    
     <footer>
         <h2>Mentions legales</h2>
         <h3>Par H'LALI Abdellah & PRÉVOT Romain</h3>
         <a>À Propos</a>
     </footer>
-
-    <script src="../js/script.js"></script>
-    <script src="../js/overtakesPlacement.js"></script>
-    <script src="../js/pageSetup.js"></script>
 </body>
 </html>

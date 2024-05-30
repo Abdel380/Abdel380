@@ -375,7 +375,7 @@ csvfile.onreadystatechange = function() {
 
 window.onload = function() {
     updateCircuitContainerHeight();
-    csvfile.open("GET", "../media/Overtakes.csv", true);
+    csvfile.open("GET", "../media/csv/Overtakes.csv", true);
     csvfile.send();
 };
 

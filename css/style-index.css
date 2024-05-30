@@ -59,16 +59,13 @@
 }
 
 .gridDivider{
-    width: 230px;
+    min-width: 100%;
     height: 230px;
     display: flex;
     position: absolute;
     border-right: 1px solid #DEDEDE;
-    margin-right:-1.8rem; /* size of gutter */
-    padding-right: 1.8rem; /* size of gutter */
     border-left: 1px solid #DEDEDE;
-    margin-left:-1.8rem; /* size of gutter */
-    padding-left: 1.8rem; /* size of gutter */
+    
 }
 
 .img-circuit {
@@ -159,6 +156,7 @@
     transform: translateX(-50%);
     width: 100%;
     max-width: 1300px;
+    margin-bottom: 100px;
 }
 
 
@@ -223,23 +221,8 @@
 }
 
 
-footer {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-    color: rgb(122, 122, 122);
-    border-top: 1px solid rgb(74, 74, 74);
-}
-footer h2 {
-    font-weight: 100;
-}
-footer h3 {
-    font-weight: 100;
-}
+
+
 
 /* AJOUT OBLIGATOIRE */
 @media screen and (max-width: 600px) {
@@ -255,6 +238,5 @@ footer h3 {
 
     .ranking { 
         font-size: 80px;
-
     }
 }

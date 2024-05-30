@@ -1,0 +1,137 @@
+.login-body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 200px);
+}
+
+.login-wrap{
+    max-width: 350px;
+    width: 100%;
+}
+
+.login-header {
+    display: inline-block;   
+    text-align: left;
+}
+
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+
+.login-form .field{
+    margin: 15px 0;
+}
+
+.signup-wrap{
+    max-width: 700px;
+    width: 100%;
+}
+
+.signup-names{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+#select-date {
+    display: flex;
+    justify-content: space-between;
+    height: 46.5px;
+}
+
+#select-date-wrapper{
+    width: 70%;
+    position: relative;
+}
+
+#select-date select{
+    position: absolute;
+    padding: 10px;
+    margin-top: 3px;
+    border: none;
+    border-radius: 2px;
+    outline: 3px solid #ccc;
+    background-color: #ccc;
+    font-size: 1.1rem;
+    width: 130px;
+    max-height: 222px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+#select-date select option{
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+#select-date select:first-child{
+    left: 0px;
+}
+
+#select-date select:nth-child(2){
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#select-date select:nth-child(3){
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    margin-top: 3px;
+    border: none;
+    border-radius: 2px;
+    outline: 3px solid #ccc;
+    background-color: #ccc;
+    font-size: 1.1rem;
+}
+
+input[type="text"] {
+    width: 330px;
+}
+
+#emailInput, #passwordInput {
+    width: 350px;
+}
+
+input[type="text"]:hover, input[type="password"]:hover, #select-date select:hover{
+    outline: 3px solid #666666;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, #select-date select:focus{
+    outline: 3px solid #666666;
+    background-color: #fff;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: red;
+    color: black;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+button[type="submit"]:hover {
+    width: 100%;
+    padding: 10px;
+    background: darkred;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+}

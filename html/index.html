@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Over Takes</title>
+    <link rel="icon" type="image/x-icon" href="../media/Icon/favicon.png">
+    <title>OverTakes</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/style-index.css">
-    <script src="../js/script.js"></script>
+    
 </head>
 <body style="background-color: #111111;">
     <div class="animation">
@@ -14,18 +15,20 @@
         <div class="traine"></div>
     </div>
 
-    <header id="Header" class="Header">
-        <div class="logo">
+    <header id="HeaderBar" class="HeaderBar">
+        <div class="HeaderBar-module_Logo">
             <span><a href="index.html" class="logo-text logo-a poppins-black-italic" style="text-decoration: none;">OVER&nbsp;</a></span><span><a href="index.html" class="logo-text logo-b poppins-black-italic" style="text-decoration: none;">TAKES</a></span>
             <span><a href="index.html" class="logo-text-small logo-a poppins-black-italic" style="text-decoration: none;">O</a></span><span><a href="index.html" class="logo-text-small logo-b poppins-black-italic" style="text-decoration: none;">T</a></span>
         </div>
-        <div class="mid">
+        <div class="HeaderBar-module_Links">
             <a href="index.html">Accueil</a>
             <a>Circuits</a>
-            <a>Actualité</a>
-            <a>Contact</a>
+            <a>Monoplaces</a>
         </div>
-        <div class="profil">
+        <div id="HeaderBar-module_Auth_ID" class="HeaderBar-module_Auth">
+            <div id="profileIcon" class="profile"></div>
+            <a id="signup-button" href="usersignup.html" class="authButtons signupButton">S'inscrire</a>
+            <a id="login-button" href="userlogin.html" class="authButtons loginButton">Connexion</a>
         </div>
     </header>
 
@@ -243,6 +246,8 @@
     <footer>
         <h2>Mentions legales</h2>
         <h3>Par H'LALI Abdellah & PRÉVOT Romain</h3>
+        <a>À Propos</a>
     </footer>
+    <script src="../js/script.js"></script>
 </body>
 </html>

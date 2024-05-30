@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../media/Icon/favicon.png">
+    <title>OverTakes Signup</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-auth.css">
+</head>
+<body style="background-image: url('../media/Image/Backgrounds/Auth_Background.png'); background-repeat: repeat;">
+    <header id="HeaderBar" class="HeaderBar" style="background-color: #0f0f0f;
+    border-bottom: 1px solid rgb(29, 29, 29);
+    box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.20);">
+        <div class="HeaderBar-module_Logo">
+            <span><a href="index.html" class="logo-text logo-a poppins-black-italic" style="text-decoration: none;">OVER&nbsp;</a></span><span><a href="index.html" class="logo-text logo-b poppins-black-italic" style="text-decoration: none;">TAKES</a></span>
+            <span><a href="index.html" class="logo-text-small logo-a poppins-black-italic" style="text-decoration: none;">O</a></span><span><a href="index.html" class="logo-text-small logo-b poppins-black-italic" style="text-decoration: none;">T</a></span>
+        </div>
+        <div class="HeaderBar-module_Links">
+            <a href="index.html">Accueil</a>
+            <a>Circuits</a>
+            <a>Monoplaces</a>
+        </div>
+            
+        <div id="HeaderBar-module_Auth_ID" class="HeaderBar-module_Auth">
+            <div id="profileIcon" class="profile"></div>
+            <a id="signup-button" href="usersignup.html" class="authButtons signupButton">S'inscrire</a>
+            <a id="login-button" href="userlogin.html" class="authButtons loginButton">Connexion</a>
+        </div>
+    </header>
+
+    <div class="login-body">
+        <div class="signup-wrap">
+            <div class="login-header">
+                <h1>S'inscrire</h1>
+            </div>
+            <div class="login-form" style="color: white;">
+                
+                <form class="signup-form" action="/login" method="post" accept-charset="UTF-8">
+                    <div class="signup-names">
+                        <div class="field">
+                            <label for="firstNameInput">First name</label><br>
+                            <input id="firstNameInput" type="text">
+                        </div>
+                        <div class="field">
+                            <label for="lastNameInput">Last name</label><br>
+                            <input id="lastNameInput" type="text">
+                        </div>
+                    </div>
+                    <div id="select-date" class="field">
+                        Date de Naissance
+                        <div id="select-date-wrapper">
+                            <select id="dayInput" name="date" required>
+                                <option selected disabled value="">Jour</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                            <select id="monthInput" name="date" required>
+                                <option selected disabled value="">Mois</option>
+                                <option value="January">Janvier</option>
+                                <option value="February">Fevrier</option>
+                                <option value="March">Mars</option>
+                                <option value="April">Avril</option>
+                                <option value="May">Mai</option>
+                                <option value="June">Juin</option>
+                                <option value="July">Juillet</option>
+                                <option value="August">Aout</option>
+                                <option value="September">Septembre</option>
+                                <option value="October">Octobre</option>
+                                <option value="November">Novembre</option>
+                                <option value="December">Décembre</option>
+                            </select>
+                            <select id="yearInput" name="date" required>
+                                <option selected disabled value="">Année</option>                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="login-auth">
+                        <div id="login-email" class="field">
+                            <label for="userNameInput">Nom d'utilisateur ou email</label><br>
+                            <input id="userNameInput" type="text">
+                        </div>
+                        <div id="login-password" class="field">
+                            <label for="passwordInput">Mot de passe</label><br>
+                            <input id="passwordInput" type="password">
+                        </div>
+                    </div>
+                </form>
+                <button type="submit" onclick="checkFormData()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h2>Mentions legales</h2>
+        <h3>Par H'LALI Abdellah & PRÉVOT Romain</h3>
+        <a>À Propos</a>
+    </footer>
+    <script src="../js/script.js"></script>
+    <script>
+        for (let y = 1901; y < (new Date().getFullYear()-16); y++) {
+            document.getElementById("yearInput").innerHTML += '<option value="' + y + '">' + y + '</option>';
+        }
+    </script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

@@ -1,16 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+:root {
+    --ot-bg: var(--ot-color-4);
+    --ot-hf-bg: var(--ot-color-5);;
+    --ot-txt-color: var(--ot-color-1);
+    --ot-secondary: var(--ot-color-2);
+    --ot-secondary-accent: var(--ot-color-3);;
+}
+
 *, body {
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    --ot-color-1 : white;
+    --ot-color-2 : red;
+    --ot-color-3 : darkred;
+    --ot-color-4 : #111111;
+    --ot-color-5 : #0f0f0f;
+    --ot-color-6 : #1f1f1f;
+
 }
 
 body {
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
-    background-color: #111111;
+    background-color: var(--ot-bg);
 }
 
 .animation {
@@ -20,7 +38,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 10000;
-    background: #111111;
+    background: var(--ot-bg);
     overflow: hidden; /* Cela cache les parties qui dépassent du cadre */
     animation-name: getOut;
     animation-duration: 1s; /* Durée de l'animation */
@@ -82,23 +100,24 @@ header {
     position: fixed;
     width: 100%;
     height: 80px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 9999;
     transition: background-color 0.5s ease, box-shadow 0.5s ease, border-bottom 0.5s ease; /* Ajoute une transition de 0.5 seconde */
 }
 
 header.scrolled {
-    background-color: #0f0f0f;
+    background-color: var(--ot-hf-bg);
     border-bottom: 1px solid rgb(29, 29, 29);
     box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.20);
     transition: background-color 0.5s ease, box-shadow 0.5s ease; 
 }
 
-header .logo {
+header .HeaderBar-module_Logo {
+    position: absolute;
     display: block;
     font-size: 40px;
-    margin-left: 25px;
+    left: 25px;
     font-weight: 900;
     font-style: italic;
     -webkit-user-select: none; /* Safari */
@@ -117,36 +136,35 @@ header .logo-text-small {
 
 header .logo-a {
     text-decoration: none;
-    color: white;
+    color: var(--ot-txt-color);
 }
 
 header .logo-b {
     text-decoration: none;
-    color: red;
+    color: var(--ot-secondary);
 }
 
-header .mid {
+header .HeaderBar-module_Links {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 450px;
-    transform: translateX(-15%);
 }
 
-header .mid a {
+header .HeaderBar-module_Links a {
     font-size: 18px;
     font-weight: 100;
     transition: text-shadow 0.15s ease;
-    color: white;
+    color: var(--ot-txt-color);
     text-decoration: none;
 }
 
-header .mid a:hover {
+header .HeaderBar-module_Links a:hover {
     cursor: pointer;
     text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.593);
 }
 
-header .profil {
+header .profile {
     width: 50px;
     height: 50px;
     border-radius: 25px;
@@ -154,8 +172,64 @@ header .profil {
     margin-right: 25px;
 }
 
+header .HeaderBar-module_Auth {
+    position: absolute;
+    right: 10px;    
+}
+
+header .authButtons {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    background: #1f1f1f;
+    font-weight: 400;
+    color: var(--ot-txt-color);
+    padding: 10px 15px 10px 15px;
+    margin: 3px 5px 3px 5px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+header .signupButton {
+    background: var(--ot-secondary);
+    color: black;
+}
+
+header .signupButton:hover {
+    background: var(--ot-secondary-accent);
+    color: var(--ot-txt-color);
+}
+
+header .loginButton:hover {
+    background: #3b3b3b;
+}
+
+
+footer {
+    width: 100%;
+    position: relative;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(122, 122, 122);
+    background-color: var(--ot-hf-bg);
+    border-top: 1px solid rgb(74, 74, 74);
+}
+footer h2 {
+    font-weight: 100;
+}
+footer h3 {
+    font-weight: 100;
+}
+
+
+
 @media screen and (max-width: 1000px) {
-    header .mid {
+    header .HeaderBar-module_Links {
         display: none;
     }
 }
