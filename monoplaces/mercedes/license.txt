@@ -1,0 +1,11 @@
+Model Information:
+* title:	Mercedes AMG Petronas  W14 2023
+* source:	https://sketchfab.com/3d-models/mercedes-amg-petronas-w14-2023-f210e49637fd49bfa52860d2e17dcf50
+* author:	Redgrund (https://sketchfab.com/redgrund)
+
+Model License:
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Mercedes AMG Petronas  W14 2023" (https://sketchfab.com/3d-models/mercedes-amg-petronas-w14-2023-f210e49637fd49bfa52860d2e17dcf50) by Redgrund (https://sketchfab.com/redgrund) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)

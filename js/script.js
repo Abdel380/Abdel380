@@ -37,3 +37,14 @@ function loadAuthInfos() {
 window.addEventListener('load', loadAuthInfos);
 
 
+
+
+// Scroll header
+document.getElementById("scrollButton").addEventListener("click", function() {
+    // Faites défiler la page vers le bas de 500 pixels
+    window.scrollTo({
+        top: document.querySelector('.title').getBoundingClientRect().top, // Position verticale de "CIRCUIT"
+        left: 0,  // Nombre de pixels à faire défiler horizontalement
+        behavior: 'smooth' // Défiler de manière fluide
+    });
+});
