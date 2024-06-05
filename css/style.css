@@ -2,10 +2,14 @@
 
 :root {
     --ot-bg: var(--ot-color-4);
-    --ot-hf-bg: var(--ot-color-5);;
+    --ot-hf-bg: var(--ot-color-5);
     --ot-txt-color: var(--ot-color-1);
     --ot-secondary: var(--ot-color-2);
-    --ot-secondary-accent: var(--ot-color-3);;
+    --ot-secondary-accent: var(--ot-color-3);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 *, body {
@@ -99,30 +103,262 @@ header {
     display: flex;
     position: fixed;
     width: 100%;
-    height: 80px;
     justify-content: center;
-    align-items: center;
     z-index: 9999;
-    transition: background-color 0.5s ease, box-shadow 0.5s ease, border-bottom 0.5s ease; /* Ajoute une transition de 0.5 seconde */
+    transition: background-color 0.5s ease, box-shadow 0.5s ease,
+        border-bottom 0.5s ease; /* Ajoute une transition de 0.5 seconde */
 }
 
 header.scrolled {
     background-color: var(--ot-hf-bg);
     border-bottom: 1px solid rgb(29, 29, 29);
-    box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.20);
-    transition: background-color 0.5s ease, box-shadow 0.5s ease; 
+    box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
-header .HeaderBar-module_Logo {
+.grid {
+    display: grid;
+    height: 80px;
+    grid-template-columns: 1fr 2fr 1fr;
+    width: 95%;
+}
+
+.headerbar-module {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+#headerbar-module-left {
+    justify-content: flex-start;
+}
+
+#headerbar-module-center {
+    justify-content: center;
+}
+
+#headerbar-module-right {
+    justify-content: flex-end;
+}
+
+/* LOGO */
+
+.logo {
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 900;
+    font-style: italic;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.logo-o {
+    color: white;
+}
+
+.logo-t {
+    color: red;
+}
+
+.logo-small {
+    display: none;
+}
+
+/* MID NAV */
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    transition: text-shadow 0.15s ease;
+}
+
+.nav-links li a:hover {
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.593);
+}
+
+/* AUTH BUTTONS */
+
+header .authButton {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    background: #1f1f1f;
+    font-weight: 400;
+    color: white;
+    padding: 10px 15px 10px 15px;
+    margin: 3px 5px 3px 5px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+header .signupButton {
+    background: red;
+    color: black;
+}
+
+header .signupButton:hover {
+    background: darkred;
+    color: white;
+}
+
+header .loginButton:hover {
+    background: #3b3b3b;
+}
+
+/* BURGER NAV */
+
+.hamburger {
+    display: none;
+    height: 16px;
+    width: 28px;
+}
+
+.hamburger a.main-nav-toggle {
+    display: block;
+    height: 16px;
+    width: 28px;
+    position: relative;
+}
+
+.hamburger a.main-nav-toggle:after,
+.hamburger a.main-nav-toggle:before {
+    content: "";
+
+    width: 100%;
+    height: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    border-bottom: 4px solid #bbb;
+    transition: all ease-out 0.3s;
+}
+
+.hamburger a.main-nav-toggle:after {
+    top: 100%;
+}
+
+.hamburger a.main-nav-toggle i {
+    display: block;
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 4px;
+    background-color: #bbb;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transition: all ease-out 0.1s;
+}
+
+.hamburger a.main-nav-toggle.active-menu:after {
+    transform: rotate(45deg);
+    transform-origin: center;
+    top: 50%;
+}
+
+.hamburger a.main-nav-toggle.active-menu:before {
+    transform: rotate(-45deg);
+    transform-origin: center;
+    top: 50%;
+}
+
+.hamburger a.main-nav-toggle.active-menu i {
+    opacity: 0;
+}
+
+/* BURGER NAV DROPDOWN */
+
+#main-nav-dropdown {
+    display: none;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    height: calc(50% - 80px);
+
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: -1;
+    transition: all 0.5s ease 0s;
+}
+
+#main-nav-dropdown.active {
+    z-index: 1000;
+}
+
+#main-nav-dropdown i {
+    height: 100%;
+    width: 100%;
+    border-top: 1px solid #bbb;
+    opacity: 0%;
+}
+
+#main-nav-dropdown i:nth-child(1) {
+    border-top: none;
+    transition: all 0.5s ease 0s;
+}
+
+#main-nav-dropdown i:nth-child(2) {
+    transition: all 0.5s ease 0.2s;
+}
+
+#main-nav-dropdown i:nth-child(3) {
+    transition: all 0.5s ease 0.3s;
+}
+
+#main-nav-dropdown i:nth-child(4) {
+    transition: all 0.5s ease 0.4s;
+}
+
+#main-nav-dropdown i a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+#main-nav-dropdown i.active {
+    opacity: 100%;
+    background: #1f1f1f;
+}
+header .profile {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: aqua;
+    margin-right: 25px;
+}
+
+/* header .HeaderBar-module_Logo {
     position: absolute;
     display: block;
     font-size: 40px;
     left: 25px;
     font-weight: 900;
     font-style: italic;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 header .logo-text {
@@ -204,9 +440,9 @@ header .signupButton:hover {
 
 header .loginButton:hover {
     background: #3b3b3b;
-}
+} */
 
-
+/* Footer */
 footer {
     width: 100%;
     position: relative;
@@ -229,16 +465,27 @@ footer h3 {
 
 
 @media screen and (max-width: 1000px) {
-    header .HeaderBar-module_Links {
+    #headerbar-module-center nav {
         display: none;
+    }
+    .grid {
+        grid-template-columns: 1fr 0fr 1fr;
+    }
+    #main-nav-dropdown {
+        display: grid;
     }
 }
 
 @media screen and (max-width: 600px) {
-    header .logo-text {
+    .hamburger {
+        display: inline-block;
+    }
+
+    .auth-buttons {
         display: none;
     }
-    header .logo-text-small {
-        display: block;
+
+    .hamburger {
+        display: inline-block;
     }
 }

@@ -9,25 +9,45 @@
     <link rel="stylesheet" href="../css/style-auth.css">
 </head>
 <body style="background-image: url('../media/Image/Backgrounds/Auth_Background.png'); background-repeat: repeat;">
-    <header id="HeaderBar" class="HeaderBar" style="background-color: #0f0f0f;
-    border-bottom: 1px solid rgb(29, 29, 29);
-    box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.20);">
-        <div class="HeaderBar-module_Logo">
-            <span><a href="index.html" class="logo-text logo-a poppins-black-italic" style="text-decoration: none;">OVER&nbsp;</a></span><span><a href="index.html" class="logo-text logo-b poppins-black-italic" style="text-decoration: none;">TAKES</a></span>
-            <span><a href="index.html" class="logo-text-small logo-a poppins-black-italic" style="text-decoration: none;">O</a></span><span><a href="index.html" class="logo-text-small logo-b poppins-black-italic" style="text-decoration: none;">T</a></span>
-        </div>
-        <div class="HeaderBar-module_Links">
-            <a href="index.html">Accueil</a>
-            <a>Circuits</a>
-            <a>Monoplaces</a>
-        </div>
-            
-        <div id="HeaderBar-module_Auth_ID" class="HeaderBar-module_Auth">
-            <div id="profileIcon" class="profile"></div>
-            <a id="signup-button" href="usersignup.html" class="authButtons signupButton">S'inscrire</a>
-            <a id="login-button" href="userlogin.html" class="authButtons loginButton">Connexion</a>
-        </div>
-    </header>
+    <header id="headerbar" class="scrolled">
+            <div class="grid">
+                <i id="headerbar-module-left" class="headerbar-module">
+                    <span><a href="../html/" class="logo logo-o logo-large poppins-black-italic">OVER&nbsp;</a></span>
+                    <span><a href="../html/" class="logo logo-t logo-large poppins-black-italic">TAKES</a></span>
+                    <span><a href="../html/" class="logo logo-o logo-small poppins-black-italic">O</a></span>
+                    <span><a href="../html/" class="logo logo-t logo-small poppins-black-italic">T</a></span>
+                </i>
+    
+                <i id="headerbar-module-center" class="headerbar-module">
+                    <nav>
+                        <ul class="nav-links">
+                            <li><a href="../html/">Accueil</a></li>
+                            <li><a href="../html/#bookmark-circuit">Circuits</a></li>
+                            <li><a href="carviewer.html">Monoplaces</a></li>
+                        </ul>
+                    </nav>
+                </i>
+    
+                <i id="headerbar-module-right" class="headerbar-module">
+                    <div id="profileIcon" class="profile">
+                        <a href="#main-nav"></a>
+                    </div>
+                    <div class ="auth-buttons">
+                        <a id="signup-button" href="usersignup.html" class="authButton signupButton">S'inscrire</a>
+                        <a id="login-button" href="userlogin.html" class="authButton loginButton">Connexion</a>
+                    </div>
+                    <div class="hamburger">
+                        <a id="main-nav-toggle-burger" class="main-nav-toggle" href="#main-nav"><i>Menu</i></a>
+                    </div>
+                    <div id="main-nav-dropdown">
+                        <i><a href="../html/">Accueil</a></i>
+                        <i><a href="../html/#bookmark-circuit">Circuits</a></i>
+                        <i><a href="usersignup.html">S'inscrire</a></i>
+                        <i><a href="userlogin.html">Connexion</a></i>
+                    </div>
+                </i>
+            </div>
+        </header>
 
     <div class="login-body">
         <div class="signup-wrap">

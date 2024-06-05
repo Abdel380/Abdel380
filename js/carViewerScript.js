@@ -98,7 +98,7 @@ function loadModel(ecurie) {
     transitionColor(spotLight, 0x000000, transitionDurationDown),
     transitionColor(spotLight2, 0x000000, transitionDurationDown)
   ]).then(() => {
-    const path = `${ecurie}/`;
+    const path = `../media/monoplaces/${ecurie}/`;
     const loader = new GLTFLoader().setPath(path);
     loader.load('scene.gltf', (gltf) => {
       console.log('loading model');
@@ -137,7 +137,7 @@ function loadModel(ecurie) {
   });
 }
 
-loadModel("ferrari");
+loadModel("redbull");
 // Sélectionner tous les boutons d'écurie
 const ecurieButtons = document.querySelectorAll('.ecurieButton');
 

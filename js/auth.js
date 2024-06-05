@@ -72,14 +72,17 @@ function saveAuthInfos() {
     console.log('Saving authentication informations...');
     console.log(userInfos.getInfos());
     const infosMap = userInfos.getInfos().map(infos => ({ firstName: infos.firstName, lastName: infos.lastName, birthDate: infos.birthDate, user:infos.user, pwd:infos.pwd}));
-    sessionStorage.setItem('authInfos', JSON.stringify(infosMap));
-    sessionStorage.setItem('authenticated', true);
+    if (infosMap.length !== 0){
+        sessionStorage.setItem('authInfos', JSON.stringify(infosMap));
+        sessionStorage.setItem('authenticated', true);
+    }
 }
 
 // Fonction pour charger les messages de la session navigateur
 function loadAuthInfos() {
     // Récupérer l'historique des messages de la session navigateur
     // const infosMap = JSON.parse(sessionStorage.getItem('authInfos'));
+    
     const authenticated = sessionStorage.getItem('authenticated');
     console.log('Loading authentication informations...');
     console.log(authenticated);
@@ -88,7 +91,7 @@ function loadAuthInfos() {
         document.getElementById("signup-button").style.display = 'none';
         document.getElementById("login-button").style.display = 'none';
 
-    } else{
+    } else {
         document.getElementById("profileIcon").style.display = 'none';
         document.getElementById("signup-button").style.display = 'block';
         document.getElementById("login-button").style.display = 'block';
@@ -108,7 +111,3 @@ function loadAuthInfos() {
 // Enregistrement des messages dans la session du navigateur avant de quitter la page
 
 window.addEventListener('beforeunload', saveAuthInfos);
-
-// Chargement des messages de la session du navigateur au chargement de la page
-
-window.addEventListener('load', loadAuthInfos);
