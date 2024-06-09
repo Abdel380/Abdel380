@@ -2,12 +2,26 @@
 
 
 
-#testvroum{
+#track-infos{
     position: relative;
     height: 100vh;
     width: 100vw;
     background-color: #111111;
     z-index: 1;
+    color: white;
+}
+
+#track-infos .infos-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 250px;
+    width: 70%;
+    position: absolute;
+    color : white;
+    margin-left: 10vw;
+    margin-top: calc(17vh + 70px);
+    z-index: 3;
 }
 
 .circuit-container {
@@ -24,6 +38,7 @@
     min-width: 100vw;
     max-width: 125vw;
     z-index: 1;
+    filter: blur(4px);
 
 }
 
@@ -59,9 +74,10 @@
 
 .img-circuit {
     width: 100%;
-    background-color: rgba(255, 255, 255, 20%);
+    /* background-color: rgba(255, 255, 255, 20%);
     box-shadow: 0 0 20px 20px rgba(255, 255, 255, 20%);
-    border-radius: 10px;
+    border-radius: 10px; */
+    filter: drop-shadow(0 0 0.75rem grey);  
 }
 
 .overtake-location {

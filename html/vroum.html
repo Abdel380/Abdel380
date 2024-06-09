@@ -1,41 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>About Us</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			background-color: #f0f0f0;
-		}
-		header {
-			background-color: #333;
-			color: #fff;
-			padding: 10px 20px;
-		}
-		header h1 {
-			margin: 0;
-		}
-		main {
-			padding: 20px;
-			background-color: #fff;
-			margin: 20px;
-			border-radius: 5px;
-			box-shadow: 0 0 10px rgba(0,0,0,0.1);
-		}
-		main h2 {
-			margin: 0 0 10px;
-		}
-		main p {
-			margin: 0;
-		}
-	</style>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-	<header>
-		<h1>Formula 1 Overtakes</h1>
-	</header>
+	<header id="headerbar" class="scrolled">
+        <div class="grid">
+            <div id="headerbar-module-left" class="headerbar-module">
+                <span><a href="../html/" class="logo logo-o logo-large poppins-black-italic">OVER&nbsp;</a></span>
+                <span><a href="../html/" class="logo logo-t logo-large poppins-black-italic">TAKES</a></span>
+                <span><a href="../html/" class="logo logo-o logo-small poppins-black-italic">O</a></span>
+                <span><a href="../html/" class="logo logo-t logo-small poppins-black-italic">T</a></span>
+            </div>
+
+            <div id="headerbar-module-center" class="headerbar-module">
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="../html/">Accueil</a></li>
+                        <li><a href="../html/#bookmark-circuit">Circuits</a></li>
+                        <li><a href="carviewer.html">Monoplaces</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="headerbar-module-right" class="headerbar-module">
+                <div id="profileIcon" class="profile">
+                    <a href="#main-nav"></a>
+                </div>
+                <div class ="auth-buttons">
+                    <a id="signup-button" href="usersignup.html" class="authButton signupButton">S'inscrire</a>
+                    <a id="login-button" href="userlogin.html" class="authButton loginButton">Connexion</a>
+                </div>
+                <div class="hamburger">
+                    <a id="main-nav-toggle-burger" class="main-nav-toggle" href="#main-nav"><i>Menu</i></a>
+                </div>
+                <div id="main-nav-dropdown">
+                    <i><a href="../html/">Accueil</a></i>
+                    <i><a href="../html/#bookmark-circuit">Circuits</a></i>
+                </div>
+            </div>
+        </div>
+    </header>
 	<main>
 		<h2>About Us</h2>
 		<p>Welcome to our website about Formula 1 overtakes! We are passionate about the thrill of racing and the art of overtaking. Our goal is to provide you with the latest news, analysis, and insights about Formula 1 overtakes.</p>
