@@ -47,6 +47,7 @@ function checkFormData(){
         return false;
     }
 
+
     const user = document.getElementById("userNameInput").value;
     const pwd = document.getElementById("passwordInput").value;
 
@@ -60,7 +61,7 @@ function checkFormData(){
     const birthDate = {day, month, year};
     userInfos.addInfos(firstName, lastName, birthDate, user, pwd);
     saveAuthInfos();
-    window.location.replace("index.html")
+    window.location.replace("../html/")
 }
 
 

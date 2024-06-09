@@ -54,7 +54,7 @@ function loadAuthInfos() {
     } else {
         document.getElementById("profileIcon").style.display = 'none';
         document.getElementById("main-nav-dropdown").innerHTML = `
-        <i><a href="../html/">Accueil</a></i>
+        <i><a href="../html/#bookmark-home">Accueil</a></i>
         <i><a href="../html/#bookmark-circuit">Circuits</a></i>
         <i><a href="usersignup.html">S'inscrire</a></i>
         <i><a href="userlogin.html">Connexion</a></i>`;
