@@ -47,6 +47,10 @@ function checkFormData(){
         return false;
     }
 
+    if (day ==="" || month === "" || year === ""){
+        alert("Please select a valid date");
+        return false;
+    }
 
     const user = document.getElementById("userNameInput").value;
     const pwd = document.getElementById("passwordInput").value;
