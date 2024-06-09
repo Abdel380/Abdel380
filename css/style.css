@@ -119,7 +119,7 @@ header.scrolled {
 .grid {
     display: grid;
     height: 80px;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
     width: 95%;
 }
 
@@ -286,13 +286,14 @@ header .loginButton:hover {
 #main-nav-dropdown {
     display: none;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    width: 100%;
-    height: calc(50% - 80px);
+    
+    width: 300px;
+    height: calc(50svh);;
 
     position: absolute;
     top: 80px;
-    left: 0;
-    z-index: -1;
+    right: 20px;
+    z-index: -1000;
     transition: all 0.5s ease 0s;
 }
 
@@ -303,13 +304,13 @@ header .loginButton:hover {
 #main-nav-dropdown i {
     height: 100%;
     width: 100%;
-    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
     opacity: 0%;
 }
 
 #main-nav-dropdown i:nth-child(1) {
-    border-top: none;
-    transition: all 0.5s ease 0s;
+    border-top: 1px solid #bbb;
+    transition: all 0.5s ease 0.1s;
 }
 
 #main-nav-dropdown i:nth-child(2) {
@@ -334,119 +335,28 @@ header .loginButton:hover {
     color: white;
     font-weight: 400;
     font-size: 1.1rem;
+    
+
 }
 
 #main-nav-dropdown i.active {
     opacity: 100%;
     background: #1f1f1f;
 }
+
 header .profile {
     cursor: pointer;
     width: 50px;
     height: 50px;
     border-radius: 25px;
     background-color: aqua;
-    margin-right: 25px;
 }
-
-/* header .HeaderBar-module_Logo {
-    position: absolute;
-    display: block;
-    font-size: 40px;
-    left: 25px;
-    font-weight: 900;
-    font-style: italic;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-header .logo-text {
-    float: left;
-}
-
-header .logo-text-small {
-    float: left;
-    display: none;
-}
-
-header .logo-a {
-    text-decoration: none;
-    color: var(--ot-txt-color);
-}
-
-header .logo-b {
-    text-decoration: none;
-    color: var(--ot-secondary);
-}
-
-header .HeaderBar-module_Links {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 450px;
-}
-
-header .HeaderBar-module_Links a {
-    font-size: 18px;
-    font-weight: 100;
-    transition: text-shadow 0.15s ease;
-    color: var(--ot-txt-color);
-    text-decoration: none;
-}
-
-header .HeaderBar-module_Links a:hover {
-    cursor: pointer;
-    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.593);
-}
-
-header .profile {
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    background-color: aqua;
-    margin-right: 25px;
-}
-
-header .HeaderBar-module_Auth {
-    position: absolute;
-    right: 10px;    
-}
-
-header .authButtons {
-    position: relative;
-    text-decoration: none;
-    cursor: pointer;
-    background: #1f1f1f;
-    font-weight: 400;
-    color: var(--ot-txt-color);
-    padding: 10px 15px 10px 15px;
-    margin: 3px 5px 3px 5px;
-    border-radius: 5px;
-    border: 2px solid transparent;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-header .signupButton {
-    background: var(--ot-secondary);
-    color: black;
-}
-
-header .signupButton:hover {
-    background: var(--ot-secondary-accent);
-    color: var(--ot-txt-color);
-}
-
-header .loginButton:hover {
-    background: #3b3b3b;
-} */
 
 /* Footer */
 footer {
     width: 100%;
     position: relative;
-    height: 200px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -468,11 +378,14 @@ footer h3 {
     #headerbar-module-center nav {
         display: none;
     }
+
     .grid {
         grid-template-columns: 1fr 0fr 1fr;
     }
+
     #main-nav-dropdown {
-        display: grid;
+        width: 100%;
+        right:0;
     }
 }
 
@@ -483,9 +396,5 @@ footer h3 {
 
     .auth-buttons {
         display: none;
-    }
-
-    .hamburger {
-        display: inline-block;
     }
 }
