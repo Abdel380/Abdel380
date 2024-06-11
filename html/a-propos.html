@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Propos</title>
+    <link rel="stylesheet" href="../css/style-apropos.css">
+</head>
+<body>
+    <button class="mid-btn">Power Engine</button>
+    <div class="name">
+        <div class="name-left">PREVOT</div>
+        <div class="name-right">H'LALI</div>
+    </div>
+    <div class="firstname">
+        <div class="firstname-left">Romain</div>
+        <div class="firstname-right">Abdellah</div>
+    </div>
+
+    <div class="text-container">
+        <p id="text-content"></p>
+    </div>
+
+    <div class="img-container">
+        <div class="img-card">
+            <img src="../media/Image/epic/image1.png" alt="image">
+        </div>
+        <div class="img-card">
+            <img src="../media/Image/epic/image2.png" alt="image">
+        </div>
+        <div class="img-card">
+            <img src="../media/Image/epic/image3.png" alt="image">
+        </div>
+        <div class="img-card">
+            <img src="../media/Image/epic/image4.png" alt="image">
+        </div>
+        <div class="img-card">
+            <img src="../media/Image/epic/image5.png" alt="image">
+        </div>
+        <div class="img-card">
+            <img src="../media/Image/epic/image6.png" alt="image">
+        </div>
+        <div class="img-card">
+            <img src="../media/Image/epic/image7.png" alt="image">
+        </div>
+        <div class="img-card">
+            <img src="../media/Image/epic/image8.png" alt="image">
+        </div>
+        <div class="img-card">
+            <img src="../media/Image/epic/image9.png" alt="image">
+        </div>
+        <div class="img-card">
+            <img src="../media/Image/epic/image10.png" alt="image">
+        </div>
+        <div class="img-card">
+            <img src="../media/Image/epic/image11.png" alt="image">
+        </div>
+        
+    </div>
+    
+
+    <script>
+        const imgCards = document.querySelectorAll('.img-card');
+        let positions = Array.from(imgCards).map(card => card.getBoundingClientRect().x);
+
+        function scrollImage() {
+            positions = positions.map(pos => pos - 1);
+
+            positions.forEach((pos, index) => {
+                imgCards[index].style.left = pos + 'px';
+            });
+
+            console.log(positions[0]); // Vérification des positions dans la console
+        }
+
+        // Utilisation d'un intervalle pour défiler les images continuellement
+        setInterval(scrollImage, 30);
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const textContainer = document.getElementById('text-content');
+            const text = `La Formule 1 est un sport captivant où la vitesse, la stratégie et l'adrénaline se rencontrent.
+            Lorsque le bruit des moteurs grondent, lorsque les cries des spectateurs cessent, 20 pilotes s'elancent dans une course qui marquera peut être l'histoire de leur sport.
+            A leur image, nous aspirons à devenir les champions dans notre domaine et leur parcours nous sert souvent d'exemple de réussite et de courage.
+            
+            C'est donc pour toute ces raisons que nous aimons la Fomule 1.`
+            let index = 0;
+
+            function typeWriter() {
+                if (index < text.length) {
+                    if (text.charAt(index) === '\n') {
+                        textContainer.innerHTML += '<br>';
+                    } else {
+                        textContainer.innerHTML += text.charAt(index);
+                    }
+                    index++;
+                    setTimeout(typeWriter, 50); // Ajustez la vitesse ici (en millisecondes)
+                }
+            }
+
+            typeWriter();
+            
+        });
+    </script>
+</body>
+</html>
