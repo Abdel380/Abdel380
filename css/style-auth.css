@@ -98,32 +98,34 @@ input[type="text"], input[type="password"] {
     background-color: #ccc;
     font-size: 1.1rem;
     width: 330px;
+    transition: all 0.1s ease;
 }
 
 input[type="text"]:hover, input[type="password"]:hover, #select-date select:hover{
-    outline: 3px solid #666666;
+    outline: 3px solid #3b3b3b;
 }
 
 input[type="text"]:focus, input[type="password"]:focus, #select-date select:focus{
-    outline: 3px solid #666666;
+    outline: 3px solid #3b3b3b;
     background-color: #fff;
 }
 
 button[type="submit"] {
     width: 100%;
     padding: 10px;
-    background: red;
+    background: var(--ot-primary);
     color: black;
     font-size: 1.1rem;
     cursor: pointer;
     border-radius: 5px;
     border: 2px solid transparent;
+    transition: all 0.2s ease;
 }
 
 button[type="submit"]:hover {
     width: 100%;
     padding: 10px;
-    background: darkred;
+    background: var(--ot-primary-shade);
     color: white;
     font-size: 1.1rem;
     cursor: pointer;

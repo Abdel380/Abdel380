@@ -55,6 +55,16 @@
     transition: filter 1s ease; /* Appliquer une transition à la propriété filter */   
 }
 
+.circuit-card .info-circuit h2{
+    transition: all 0.2s ease;
+}
+
+.circuit-card:hover .info-circuit h2{
+    font-weight: 800;
+    text-decoration-color: var(--ot-accent);
+    text-decoration-line: underline;
+}
+
 .circuit-card:hover .img-circuit {
     filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.408));
 }
