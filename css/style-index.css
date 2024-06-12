@@ -60,7 +60,7 @@
 }
 
 .circuit-card:hover .info-circuit h2{
-    font-weight: 800;
+    font-weight: 600;
     text-decoration-color: var(--ot-accent);
     text-decoration-line: underline;
 }
