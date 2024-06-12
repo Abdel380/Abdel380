@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --ot-bg: var(--ot-color-4);
-    --ot-hf-bg: var(--ot-color-5);
-    --ot-txt-color: var(--ot-color-1);
-    --ot-secondary: var(--ot-color-2);
-    --ot-secondary-accent: var(--ot-color-3);
+    --ot-text: var(--ot-color-1);
+    --ot-text-dim: var(--ot-color-3);
+    --ot-text-dark: var(--ot-color-7);
+    --ot-bg: var(--ot-color-6);
+    --ot-bg-shade: var(--ot-color-7);
+    --ot-primary: var(--ot-color-8);
+    --ot-primary-shade: var(--ot-color-9);
+    --ot-secondary: var(--ot-color-5);
+    --ot-secondary-shade: var(--ot-color-4);
+    --ot-secondary-shade-2: var(--ot-color-2);
+    --ot-accent : var(--ot-color-10);
 }
 
 html {
@@ -19,12 +25,20 @@ html {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 
+
     --ot-color-1 : white;
-    --ot-color-2 : red;
-    --ot-color-3 : darkred;
-    --ot-color-4 : #111111;
-    --ot-color-5 : #0f0f0f;
-    --ot-color-6 : #1f1f1f;
+    --ot-color-2 : #cccccc;
+    --ot-color-3 : #7a7a7a;
+    --ot-color-4 : #3b3b3b;
+    --ot-color-5 : #1f1f1f;
+    --ot-color-6 : #111111;
+    --ot-color-7 : #0f0f0f;
+    
+    --ot-color-8 : #e10600;
+    --ot-color-9 : darkred;
+    
+    
+    --ot-color-10 : #ffcc00;
 
 }
 
@@ -110,8 +124,8 @@ header {
 }
 
 header.scrolled {
-    background-color: var(--ot-hf-bg);
-    border-bottom: 1px solid rgb(29, 29, 29);
+    background-color: var(--ot-bg-shade);
+    border-bottom: 1px solid var(--ot-secondary);
     box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
@@ -154,11 +168,11 @@ header.scrolled {
 }
 
 .logo-o {
-    color: white;
+    color: var(--ot-text);
 }
 
 .logo-t {
-    color: red;
+    color: var(--ot-primary);
 }
 
 .logo-small {
@@ -178,12 +192,14 @@ header.scrolled {
 
 .nav-links li a {
     text-decoration: none;
-    color: white;
-    transition: text-shadow 0.15s ease;
+    color: var(--ot-text);
+    transition: all 0.2s ease;
 }
 
 .nav-links li a:hover {
-    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.593);
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.592);
+    text-decoration-color: var(--ot-accent);
+    text-decoration-line: underline;
 }
 
 /* AUTH BUTTONS */
@@ -192,29 +208,30 @@ header .authButton {
     position: relative;
     text-decoration: none;
     cursor: pointer;
-    background: #1f1f1f;
-    font-weight: 400;
-    color: white;
+    background-color: var(--ot-secondary);
+    font-weight: 500;
+    color: var(--ot-text);
     padding: 10px 15px 10px 15px;
     margin: 3px 5px 3px 5px;
     border-radius: 5px;
     border: 2px solid transparent;
     text-align: center;
     box-sizing: border-box;
+    transition: all 0.2s ease;
 }
 
-header .signupButton {
-    background: red;
-    color: black;
+header .signupButton { 
+    background-color: var(--ot-primary);
+    color: var(--ot-text-dark);
 }
 
 header .signupButton:hover {
-    background: darkred;
-    color: white;
+    background-color: var(--ot-primary-shade);
+    color: var(--ot-text);
 }
 
 header .loginButton:hover {
-    background: #3b3b3b;
+    background-color: var(--ot-secondary-shade);
 }
 
 /* BURGER NAV */
@@ -244,7 +261,7 @@ header .loginButton:hover {
     left: 0;
     right: 0;
 
-    border-bottom: 4px solid #bbb;
+    border-bottom: 4px solid var(--ot-secondary-shade-2);
     transition: all ease-out 0.3s;
 }
 
@@ -258,7 +275,7 @@ header .loginButton:hover {
     overflow: hidden;
     white-space: nowrap;
     height: 4px;
-    background-color: #bbb;
+    background-color: var(--ot-secondary-shade-2);
     width: 100%;
     position: absolute;
     top: 50%;
@@ -304,12 +321,12 @@ header .loginButton:hover {
 #main-nav-dropdown i {
     height: 100%;
     width: 100%;
-    border-bottom: 1px solid #bbb;
+    border-bottom: 1px solid var(--ot-text-dim);
     opacity: 0%;
 }
 
 #main-nav-dropdown i:nth-child(1) {
-    border-top: 1px solid #bbb;
+    border-top: 1px solid var(--ot-text-dim);
     transition: all 0.5s ease 0.1s;
 }
 
@@ -332,16 +349,24 @@ header .loginButton:hover {
     width: 100%;
     height: 100%;
     text-decoration: none;
-    color: white;
+    color: var(--ot-text);
     font-weight: 400;
     font-size: 1.1rem;
-    
+    transition: all 0.2s ease;
+    background: var(--ot-secondary);
 
+}
+
+#main-nav-dropdown i a:hover {
+    color: var(--ot-text);
+    font-weight: 800;
+    background-color: var(--ot-bg-shade);
+    text-decoration-color: var(--ot-accent);
+    text-decoration-line: underline;
 }
 
 #main-nav-dropdown i.active {
     opacity: 100%;
-    background: #1f1f1f;
 }
 
 header .profile {
@@ -362,15 +387,22 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: rgb(122, 122, 122);
-    background-color: var(--ot-hf-bg);
-    border-top: 1px solid rgb(74, 74, 74);
+    color: var(--ot-text-dim);
+    background-color: var(--ot-bg-shade);
+    border-top: 1px solid var(--ot-text-dim);
 }
 footer h2 {
     font-weight: 100;
 }
 footer h3 {
     font-weight: 100;
+}
+
+
+footer a:hover{
+    text-decoration-color: var(--ot-accent);
+    text-decoration-line: underline;
+    transition: all 0.1s ease;
 }
 
 
